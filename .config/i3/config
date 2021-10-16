@@ -198,3 +198,7 @@ new_window 1pixel
 
 gaps inner 5
 gaps outer 5
+
+# screenshot
+bindsym Print exec flameshot gui
+
