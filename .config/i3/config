@@ -61,12 +61,6 @@ bindsym $mod+Shift+d exec "rofi -modi drun,run -show drun"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -198,6 +192,12 @@ new_window 1pixel
 
 gaps inner 5
 gaps outer 5
+
+exec --no-startup-id bitwarden
+bindsym $Mod+k [instance="bitwarden"] scratchpad show; [instance="bitwarden"] move position center
+for_window [instance="bitwarden"] move scratchpad
+for_window [instance="bitwarden"] border pixel 3
+for_window [instance="bitwarden"] resize set 800 600
 
 # screenshot
 bindsym Print exec flameshot gui
